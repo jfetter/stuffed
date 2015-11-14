@@ -10,14 +10,24 @@ html(lang="en")
       .jumbotron
         h1 Room for stuffin my room
       h3 Where would you like to put your stuff
-          .form-group
-            label(for='sel1') Select Room
-              select#sel.form-control
-                //- each item in rooms
-                  option 
-              button#select select
-              button.adminView Admin View
-      div.roomContainer
+      .form-group
+        label(for='sel') Select Room
+          select#sel.form-control
+            each item in items
+              - var id = item._id
+              option.dropDown(data-id= id)= item.name
+          button#select select
+          a.btn.ptn-primary(href='/admin') admin view
+      table
+        thead
+            tr.col-sm-2.col-md-2.col-lg.2
+              th.col-sm-2.col-md-2.col-lg.2 Name
+              th.col-sm-2.col-md-2.col-lg.2 Value
+              th.col-sm-2.col-md-2.col-lg.2 Description
+              th.col-sm-2.col-md-2.col-lg.2 Created At
+            tr
+          tbody.roomContainer
 
     script(src='bower_components/jquery/dist/jquery.min.js')
+    script(src='bower_components/bootstrap/dist/js/bootstrap.min.js')
     script(src='js/main.js')

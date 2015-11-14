@@ -4,8 +4,8 @@ $(document).ready(init);
 
 function init() {
   console.log('Hello jQuery!');
-  $("button").on("click", addRoom)
-  $("#room").on("click", showRoom)
+  $(".selectRoom").on("click", addItem)
+  $(".addRoom").on("click", addRoom)
 }
 
 function addRoom(){
@@ -21,7 +21,7 @@ function addRoom(){
 	})
 }
 
-function showRoom(){
+function addItem(){
 	console.log("in the show room")
 
 	// $.get(function())

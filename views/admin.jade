@@ -9,12 +9,34 @@ html(lang="en")
       br
       .jumbotron
         h1 Room for stuffin my rooms
-      h3 Make Rooms, Bitches!
-      input#roomName(placeholder= "and we call this room...")
-      button.add add
+        .row
+          .col-sm-5.col-md-5.col-lg-5
+            h3 Make Rooms, Bitches!
+            input#roomName(placeholder= "and we call this room...")
+            button.addRoom add
+        .row
+          .col-sm-5.col-md-5.col-lg-5
+            h3 Add stuff to your house
+            input#itemName(placeholder= "Item Name")
+            input#itemValue(placeholder= "Item Value")
+            input#itemDescription(placeholder= "Item Description")
+            button.addItem add
+        .row
+          .col-sm-5.col-md-5.col-lg-5
+            h3 Put Stuff in rooms
+            .form-group
+            label(for='sel') Select Room
+            select#sel.form-control
+              each item in items
+               - var id = item._id
+                option.dropDown(data-id= id)= item.name
+            label(for='sel') Select Item
+            select#sel.form-control
+            button#select select
 
-        
+          a.btn.ptn-primary(href='/') main page
 
 
     script(src='bower_components/jquery/dist/jquery.min.js')
+    script(src='bower_components/bootstrap/dist/js/bootstrap.min.js')
     script(src='js/admin.js')
