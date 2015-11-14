@@ -14,6 +14,13 @@ html(lang="en")
             h3 Make Rooms, Bitches!
             input#roomName(placeholder= "and we call this room...")
             button.addRoom add
+            //- .form-group
+            //-   label(for='sel') Room
+            //-   select#selItem.form-control
+            //-   each item in space
+            //-     option.dropDown(data-id= id)= item.name
+            //-    - var id = item._id
+            button.deleteRoom delete
         .row
           .col-sm-5.col-md-5.col-lg-5
             h3 Add stuff to your house
@@ -21,28 +28,7 @@ html(lang="en")
             input#itemValue(placeholder= "Item Value")
             input#itemDescription(placeholder= "Item Description")
             button.addItem add
-        .row
-          .col-sm-5.col-md-5.col-lg-5
-            h3 Shuffle Stuff Around The House
-            .form-group
-            label(for='sel') Room
-            select#sel.form-control
-              each item in space
-               - var id = item._id
-                option.dropDown(data-id= id)= item.name
-            label(for='sel') Items In This Room
-            select#sel.form-control
-              each item in stuffs
-               - var id = item._id
-                option.dropDown(data-id= id)= item.items.name
-            button#removeFrom Remove?
-            label(for='sel') Items In Storage
-            select#sel.form-control
-              each item in storage
-               - var id = item._id
-                option.dropDown(data-id= id)= item.name
-            button#addTo Add To Room?
-
+            button.deleteItem delete
           a.btn.ptn-primary(href='/') main page
 
 

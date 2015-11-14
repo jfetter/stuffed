@@ -17,13 +17,17 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res) {
 	console.log("room route", req.body)
   Room.create(req.body)
-  res.send(req.query);
+  if(err) return res.status(400).send("eror")
+  res.send("room created successfully");
 });
 
 // router.get("/distribute", function(req,res){
-//		Rooms.distribute()
+//	Room.findById({ID OF ROOM})
+//	Room.findById({ID OF STORAGE})
 // 	console.log("truffle shuffle time!", req.body)
-//  	res.render("admin"), stuffs: stuff, storage: stores}
+//	
+//		var storage = 
+//  	res.render("admin", {space: rooms, storage: store}
 // })
 
 

@@ -4,17 +4,8 @@ var express = require('express');
 var router = express.Router();
 
 var Room = require("../models/room");
+var Item = require("../models/item")
 
-// what I would like to happen here is that
-// if this is the initial page load or 
-// a refresh request it will render
-// the index page, but if it is
-// the user selecting a room
-// it will reply with all of the 
-// names of the rooms. 
- // 	else if(req.body.initial)
- //  res.render("admin", {items: rooms});
-	// else res.send(rooms.names)
 router.get('/', function(req, res) {
  Room.find({}, function(err, rooms){
  		console.log("rooms", rooms)
@@ -30,6 +21,5 @@ router.post('/', function(req, res) {
 			res.send(rooms)
 	})
 });
-
 
 module.exports = router;

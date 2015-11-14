@@ -13,8 +13,7 @@ let roomSchema = Schema({
 
 Room = mongoose.model('Room', roomSchema);
 
-//create a room of requirement to stick all the stuff that is not
-//currently in a room. Make that room undeletable
+
 
 module.exports = Room;
 

@@ -7,26 +7,50 @@ html(lang="en")
   body
     .container
       br
+      .row
       .jumbotron
         h1 Room for stuffin my room
       h3 Where would you like to put your stuff
       .form-group
         label(for='sel') Select Room
-          select#sel.form-control
+          select#selRm.form-control
             each item in items
               - var id = item._id
               option.dropDown(data-id= id)= item.name
           button#select select
-          a.btn.ptn-primary(href='/admin') admin view
-      table
-        thead
-            tr.col-sm-2.col-md-2.col-lg.2
-              th.col-sm-2.col-md-2.col-lg.2 Name
-              th.col-sm-2.col-md-2.col-lg.2 Value
-              th.col-sm-2.col-md-2.col-lg.2 Description
-              th.col-sm-2.col-md-2.col-lg.2 Created At
-            tr
-          tbody.roomContainer
+      //- .row
+      //-   .col-sm-5.col-md-5.col-lg-5
+      //-     h3 Shuffle Stuff Around The House
+      //-     .form-group
+      //-     label(for='sel') Room
+      //-     select#selItem.form-control
+      //-       each item in space
+      //-        - var id = item._id
+      //-         option.dropDown(data-id= id)= item.name
+      //-     label(for='sel') Items In This Room
+      //-     select#selStor.form-control
+      //-        - var thing = items.item
+      //-       each thing in items
+      //-        - var id = thing._id
+      //-         option.dropDown(data-id= id)= item.items.name
+      //-     button#removeFrom Remove?
+      //-     label(for='sel') Items In Storage
+      //-     select#sel.form-control
+      //-        - var store = storage.item
+      //-       each item in storage
+      //-        - var id = item._id
+      //-         option.dropDown(data-id= id)= item.name
+      //-     button#addTo Add To Room?
+      //-   table
+      //-     thead
+      //-         tr.col-sm-2.col-md-2.col-lg.2
+      //-           th.col-sm-2.col-md-2.col-lg.2 Name
+      //-           th.col-sm-2.col-md-2.col-lg.2 Value
+      //-           th.col-sm-2.col-md-2.col-lg.2 Description
+      //-           th.col-sm-2.col-md-2.col-lg.2 Created At
+      //-         tr
+      //-       tbody.roomContainer
+      a.btn.ptn-primary(href='/admin') admin view
 
     script(src='bower_components/jquery/dist/jquery.min.js')
     script(src='bower_components/bootstrap/dist/js/bootstrap.min.js')
