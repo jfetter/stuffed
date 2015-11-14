@@ -38,8 +38,9 @@ router.delete('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   let item = new Item(req.body);
-  item.save(err => {
-    res.status(err ? 400 : 200).send(err || `${req.body.name} added.`);
+  console.log(item);
+  item.save((err, savedItem) => {
+    res.status(err ? 400 : 200).send(err || savedItem);
   });
 });
 

@@ -23,16 +23,19 @@ html(lang="en")
             button.addItem add
         .row
           .col-sm-5.col-md-5.col-lg-5
-            h3 Put Stuff in rooms
+            h3 Shuffle Stuff Around The House
             .form-group
-            label(for='sel') Select Room
+            label(for='sel') Room
             select#sel.form-control
               each item in items
                - var id = item._id
                 option.dropDown(data-id= id)= item.name
-            label(for='sel') Select Item
+            label(for='sel') Items In Room
             select#sel.form-control
-            button#select select
+            button#removeFrom Remove
+            label(for='sel') Items In Storage
+            select#sel.form-control
+            button#addTo Add To Room
 
           a.btn.ptn-primary(href='/') main page
 
