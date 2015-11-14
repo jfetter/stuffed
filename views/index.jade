@@ -8,6 +8,16 @@ html(lang="en")
     .container
       br
       .jumbotron
-        h1 Hey!
+        h1 Room for stuffin my room
+      h3 Where would you like to put your stuff
+          .form-group
+            label(for='sel1') Select Room
+              select#sel.form-control
+                //- each item in rooms
+                  option 
+              button#select select
+              button.adminView Admin View
+      div.roomContainer
+
     script(src='bower_components/jquery/dist/jquery.min.js')
     script(src='js/main.js')

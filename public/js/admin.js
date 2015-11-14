@@ -4,15 +4,15 @@ $(document).ready(init);
 
 function init() {
   console.log('Hello jQuery!');
-  $("#select").on("click", selectRoom)
-  $(".room").on("click", showRoom)
+  $("button").on("click", addRoom)
+  $("#room").on("click", showRoom)
 }
 
-function selectRoom(){
-	
-	var roomName = {"name": $("#sel").val(), "createdAt": (new Date).getTime(), "items": [] };
-	console.log(roomName)
-	$.post("/", roomName)
+function addRoom(){
+	console.log("add room")
+	var roomName = {"name": $("#roomName").val(), "createdAt": (new Date).getTime(), "items": [] };
+		console.log("added room" , roomName)
+	$.post("/admin", roomName)
 		.done(function(data){
 			console.log("data", data)
 		})
@@ -29,4 +29,3 @@ function showRoom(){
 	// 	.error
 
 }
-

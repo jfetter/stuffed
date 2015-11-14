@@ -23,6 +23,7 @@ app.use(express.static('public'));
 app.use('/', require('./routes/index'));
 app.use('/items', require('./routes/items'));
 app.use('/rooms', require('./routes/rooms'));
+app.use("/admin", require("./routes/admin"));
 
 // 404 HANDLER
 app.use(function(req, res){
