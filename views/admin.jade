@@ -27,15 +27,21 @@ html(lang="en")
             .form-group
             label(for='sel') Room
             select#sel.form-control
-              each item in items
+              each item in space
                - var id = item._id
                 option.dropDown(data-id= id)= item.name
-            label(for='sel') Items In Room
+            label(for='sel') Items In This Room
             select#sel.form-control
-            button#removeFrom Remove
+              each item in stuffs
+               - var id = item._id
+                option.dropDown(data-id= id)= item.items.name
+            button#removeFrom Remove?
             label(for='sel') Items In Storage
             select#sel.form-control
-            button#addTo Add To Room
+              each item in storage
+               - var id = item._id
+                option.dropDown(data-id= id)= item.name
+            button#addTo Add To Room?
 
           a.btn.ptn-primary(href='/') main page
 
